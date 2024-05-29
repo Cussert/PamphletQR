@@ -12,22 +12,17 @@
             macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
             windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
             iosPlatforms = ['iPhone', 'iPad', 'iPod'],
-            os = null;
 
-        if (macosPlatforms.includes(platform)) {
-          return 'macOS';
-        } else if (iosPlatforms.includes(platform)) {
-          return 'iOS';
-        } else if (windowsPlatforms.includes(platform)) {
-          return 'Windows';
+        if (iosPlatforms.includes(platform)) {
+          window.location = "https://apps.apple.com/in/app/green-spoon-food-delivery-app/id6475314948";
         } else if (/Android/.test(userAgent)) {
-          return 'Android';
-        } else if (!os && /Linux/.test(platform)) {
-          return 'Linux';
+          window.location = "https://play.google.com/store/apps/details?id=green.spoon.app";
+        } else {
+          window.location = "https://www.spoon.green";
         }
       }
 
-      document.getElementsByTagName('body')[0].innerHTML = getOS();
+      getOS();
     </script>
   </body>
 </html>
